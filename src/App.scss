@@ -1,0 +1,157 @@
+// App.scss
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+$primary-color: #fff;
+$secondary-color: #000000e1;
+$bg-color: #75d3e8;
+$text-color: #333;
+$font-family: "Roboto", sans-serif;
+
+// Define breakpoints for responsiveness
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
+body {
+  font-family: $font-family;
+  background: linear-gradient(to bottom, #212026, #403e4b);
+  color: $text-color;
+  margin: 0;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 15px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 10px;
+  }
+}
+
+h1 {
+  color: $primary-color;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  align-items: center;
+
+  label {
+    color: $primary-color;
+  }
+
+  select {
+    font-size: 16px;
+  }
+
+  select {
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid $secondary-color;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+.movie-list {
+  list-style: none;
+  padding: 0;
+}
+
+.movie-card {
+  background-color: #fff;
+  border: 1px solid $secondary-color;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  img {
+    border-radius: 10px;
+    margin-right: 15px;
+    width: 200px;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 140px;
+      margin: 0px 0px 15px 0px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 100px;
+      margin: 0px 10px 10px 0px;
+    }
+  }
+
+  .movie-info {
+    h2 {
+      color: $secondary-color;
+      margin: 0;
+      font-size: 1.2rem;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1rem;
+      }
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  // Stack elements on small screens
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  button {
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:disabled {
+      background-color: lighten($secondary-color, 20%);
+      cursor: not-allowed;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  }
+}
