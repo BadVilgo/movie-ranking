@@ -139,7 +139,7 @@ const App: React.FC = () => {
       </div>
 
       <ul className="movie-list">
-        {currentMovies.map((movie) => (
+        {currentMovies.map((movie, index) => (
           <li key={movie.id} className="movie-card">
             {movie.poster_path && (
               <img
@@ -149,7 +149,10 @@ const App: React.FC = () => {
               />
             )}
             <div className="movie-info">
-              <h2>{movie.title}</h2>
+              <h2>
+                {indexOfFirstMovie + index + 1}. {movie.title}
+              </h2>{" "}
+              {/* Add ranking number here */}
               <p>Genres: {getGenreNames(movie.genre_ids)}</p>
               <p>
                 Rating: {movie.vote_average} ({movie.vote_count} reviews)
