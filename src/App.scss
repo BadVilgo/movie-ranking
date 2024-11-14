@@ -7,7 +7,6 @@ $bg-color: #75d3e8;
 $text-color: #333;
 $font-family: "Roboto", sans-serif;
 
-// Define breakpoints for responsiveness
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 480px;
 
@@ -16,6 +15,8 @@ body {
   background: linear-gradient(to bottom, #212026, #403e4b);
   color: $text-color;
   margin: 0;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .app-container {
@@ -121,7 +122,6 @@ h1 {
     }
   }
 
-  // Stack elements on small screens
   @media (max-width: $breakpoint-tablet) {
     flex-direction: column;
     align-items: center;

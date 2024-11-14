@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.scss";
 
-// Define TypeScript types for movie and genre
 interface Movie {
   id: number;
   title: string;
@@ -87,7 +86,7 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    setMovies([]); // Clear movies when genre changes to prevent stale data
+    setMovies([]);
     fetchMovies(selectedGenre);
   }, [selectedGenre]);
 
